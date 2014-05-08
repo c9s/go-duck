@@ -1,6 +1,8 @@
 Duck Typing for Go
 ============================
 
+(under development...)
+
 This package implements the duck typing mechanisum for basic types:
 
 ```go
