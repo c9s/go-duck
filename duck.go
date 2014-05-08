@@ -1,6 +1,7 @@
 package duck
 
 import "reflect"
+import "strconv"
 
 const (
 	String = iota
@@ -46,4 +47,36 @@ func (self *DuckType) AsBool() bool {
 
 func (self *DuckType) AsFloat() float64 {
 	return 3.1415
+}
+
+func StringToInt(str string) int {
+	val, err := strconv.ParseInt(str, 0, 64)
+	if err != nil {
+		return 0
+	}
+	return int(val)
+}
+
+func StringToInt64(str string) int64 {
+	val, err := strconv.ParseInt(str, 0, 64)
+	if err != nil {
+		return 0
+	}
+	return int64(val)
+}
+
+func StringToFloat(str string) float64 {
+	val, err := strconv.ParseFloat(str, 64)
+	if err != nil {
+		return 0
+	}
+	return val
+}
+
+func StringToBool(str string) bool {
+	val, err := strconv.ParseBool(str)
+	if err != nil {
+		return false
+	}
+	return val
 }
